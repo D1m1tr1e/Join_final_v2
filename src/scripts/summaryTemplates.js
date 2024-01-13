@@ -5,20 +5,24 @@ function generateSummaryTemplate() {
     let content = document.getElementById('summaryContent');
     content.innerHTML = '';
     content.innerHTML = /*html*/`
-    
-    <div class="row">
-                <div class="coll-big">
-                    <img src="./src/img/to-do.png" alt="">
+
+<div class="row">
+                <div class="coll-small">
                     <div class="task-count-box">
-                        <span id="summarytoDo"></span>
-                        <span>To-do</span>
+                        <span id="summaryTaskInBoard"></span>
+                        <span>Tasks in Board</span>
                     </div>
                 </div>
-                <div class="coll-big">
-                    <img src="./src/img/done.png" alt="">
+                <div class="coll-small">
                     <div class="task-count-box">
-                        <span id="summaryDone"></span>
-                        <span>Done</span>
+                        <span id="summaryTaskInProgress"></span>
+                        <span>Tasks in Progress</span>
+                    </div>
+                </div>
+                <div class="coll-small">
+                    <div class="task-count-box">
+                        <span id="summaryTaskInAwaitingFeedback"></span>
+                        <span>Awaiting Feedback</span>
                     </div>
                 </div>
             </div>
@@ -39,22 +43,18 @@ function generateSummaryTemplate() {
                 </div>
             </div>
             <div class="row">
-                <div class="coll-small">
+                <div class="coll-big">
+                    <img src="./src/img/to-do.png" alt="">
                     <div class="task-count-box">
-                        <span id="summaryTaskInBoard"></span>
-                        <span>Tasks in Board</span>
+                        <span id="summarytoDo"></span>
+                        <span>To-do</span>
                     </div>
                 </div>
-                <div class="coll-small">
+                <div class="coll-big">
+                    <img src="./src/img/done.png" alt="">
                     <div class="task-count-box">
-                        <span id="summaryTaskInProgress"></span>
-                        <span>Tasks in Progress</span>
-                    </div>
-                </div>
-                <div class="coll-small">
-                    <div class="task-count-box">
-                        <span id="summaryTaskInAwaitingFeedback"></span>
-                        <span>Awaiting Feedback</span>
+                        <span id="summaryDone"></span>
+                        <span>Done</span>
                     </div>
                 </div>
             </div>

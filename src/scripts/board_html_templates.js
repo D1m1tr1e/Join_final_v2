@@ -15,10 +15,10 @@ function createHtmlForTasks(task, column, i) {
     let subtasklength = task.subtask.length;
     let finishedSubtasks = checkIfSubtaskIsDone(task.subtask);
     let progress = calculateProgress(subtasklength, finishedSubtasks);
-    return `
+    return /*html*/`
         <div draggable="true" ondragstart="startDragging('${column}', ${i})" id="moveFrom${column}${i}" class="task" onclick="openTask('${column}', ${i})">
             <div class="moveToBox dNone" id="moveFromBox${column}${i}"></div>
-            <img class="mobileMoveToBtn" onclick="doNotClose(event); moveToMobil('${column}', ${i})" src="src/img/img_board/arrows.png">
+            <img class="mobileMoveToBtn" onclick="doNotClose(event); moveToMobil('${column}', ${i})" src="src/img/img_board/moveToDark.ico">
             <div class="category" style="background-color: ${categoryColor}">${category}</div>
             <h3 class="title">${title}</h3>
             <div class="description">${description}</div>

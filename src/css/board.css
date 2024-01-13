@@ -238,7 +238,7 @@ body {
 }
 
 .emptyCategory {
-    width: 100%;
+    min-width: 70%;
     height: 50px;
     display: flex;
     justify-content: center;
@@ -299,7 +299,7 @@ body {
 
 .progressBar {
     height: 8px;
-    width: 138px;
+    width: 90%;
     background-color: #A8A8A8;
     border-radius: 5px;
 }
@@ -335,6 +335,7 @@ body {
 }
 
 .mobileMoveToBtn {
+    display: none;
     width: 25px;
     position: absolute;
     top: 15px;
@@ -369,7 +370,7 @@ body {
 }
 
 .mobileMoveToRow {
-    width: 100%;
+    width: 60%;
     text-align: center;
     background-color: #2A3647;
     color: #FFFFFF;
@@ -995,6 +996,10 @@ body {
         top: 57px;
     }
 
+    .mobileMoveToBtn {
+        display: block;
+    }
+
     .col {
         width: 100%;
         min-height: 320px;
@@ -1013,7 +1018,7 @@ body {
     }
 
     .task {
-        min-width: 250px;
+        min-width: 70%;
         height: 175px;
     }
 
