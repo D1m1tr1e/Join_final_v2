@@ -1,0 +1,164 @@
+<div class="container" id="add-task-container" onclick="closeCategoryToggler(); assignToHandlerInList()">
+    <form id="addTaskForm" class="addTaskForm" onsubmit="createTask(); return false">
+        <h1 class="task-headline">Add Task</h1>
+        <img src="./src/img/img_board/cross.png" alt="cross for closing the window" class="closeBtn"
+            onclick="closeWindow('modalAddtask')">
+        <div class="task-container">
+
+            <div class="task-left">
+                <!-- tittle input -->
+                <div class="input-container">
+                    <label>Title<span class="required-star">*</span></label>
+                    <div class="input-field">
+                        <input id="title" type="text" placeholder="Enter a title" required autofocus>
+                    </div>
+                </div>
+                <!-- description input -->
+                <div class="input-container">
+                    <label>Description<span class="required-star">*</span></label>
+                    <textarea class="textarea-field" id="description" rows="3" placeholder="Enter a description" required></textarea>
+                </div>
+                <!-- category input -->
+                <div class="input-container">
+                    <label for="select-task-category">Category<span class="required-star">*</span></label>
+                    <div class="toggle-menu" onclick="doNotClose(event)">
+                        <div class="select-task-category" id="select-task-category">
+                            <div id="selected-category">Select task category</div>
+                            <img src="./src/img/img_add_task/triangle.svg">
+                        </div>
+                        <ul class="category-list" style="display: none;">
+
+                            <!-- categores to be loaded from server -->
+                        </ul>
+
+                        <div class="new-category">
+                            <input type="text" autofocus placeholder="new category" class="new-catgory__input">
+                            <div class="new-category__actions">
+                                <button class="new-category__button new-category__button--close"
+                                    onclick="cancelNewCategory()"></button>
+                                <hr class="vertical" />
+                                <button class="new-category__button new-category__button--check"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="color-container" class="color-container">
+                        <div class="color__input">
+                            <input type="radio" id="color--sky-blue" name="category-color" value="#3F51B5" />
+                            <label class="color color--sky-blue" for="color--sky-blue"></label>
+                        </div>
+                        <div class="color__input">
+                            <input type="radio" id="color--red" name="category-color" value="red">
+                            <label for="color--red" class="color color--red"></label>
+                        </div>
+                        <div class="color__input">
+                            <input type="radio" id="color--green" name="category-color" value="green">
+                            <label for="color--green" class="color color--green"></label>
+                        </div>
+                        <div class="color__input">
+                            <input type="radio" id="color--orange" name="category-color" value="orange">
+                            <label for="color--orange" class="color color--orange"></label>
+                        </div>
+                        <div class="color__input">
+                            <input type="radio" id="color--purple" name="category-color" value="purple">
+                            <label for="color--purple" class="color color--purple"></label>
+                        </div>
+                        <div class="color__input">
+                            <input type="radio" id="color--blue" name="category-color" value="#2096F3">
+                            <label for="color--blue" class="color color--blue"></label>
+                        </div>
+                    </div>
+                </div>
+                <!-- contact input -->
+                <div class="input-container mt-lg" onclick="doNotClose(event)">
+                    <label>Assigned to</label>
+                    <div class="toggle-menu" id="assigned-to-dropdown">
+                        <div class="assigned-to" id="assigned-to">
+                            <span>Select contact to assign</span>
+                            <img src="./src/img/img_add_task/triangle.svg">
+
+                        </div>
+
+                        <ul class="assigned-to__list" id="assigned-to__list">
+                            <li class="assigned-to__list-action">
+                                <div class="assigned-to__in-list">
+                                    <span>Select contact to assign</span>
+                                    <img src="./src/img/img_add_task/triangle.svg">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="color-container-contact" id="inicial-circles"></div>
+                </div>
+            </div>
+            <div class="task-right">
+                <!-- Date input -->
+                <div class="input-container">
+                    <label>Due date<span class="required-star">*</span></label>
+                    <div class="input-field due-date">
+                        <input onclick="limitDueDate()" id="due-date" name="due-date" type="date" placeholder="dd/mm/yyyy">
+                    </div>
+                    <div class="input-date-ios">
+                        <input class="field-style" id="day" type="number" placeholder="Day" name="day" min="1" max="31">
+                        <select class="field-style" name="months" id="months">
+                            <option value="">Month</option>
+                            <option value="01">Januar</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">Mai</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                        <input class="field-style" id="year" type="number" name="year" placeholder="Year">
+                    </div>
+                </div>
+                <!-- Prio Buttons input -->
+                <div class="input-container">
+                    <label>Prio</label>
+                    <div class="prio-btn">
+                        <button class="prioBtnMobile" id="urgent-btn" onclick="addPrio(0)"><span>Urgent</span><img class="prio-img"
+                                id="urgent-image" src="./src/img/img_add_task/red-arrows-up.png"></button>
+                        <button class="prioBtnMobile" id="medium-btn" onclick="addPrio(1)"><span>Medium</span><img class="prio-img"
+                                id="medium-image" src="./src/img/img_add_task/orange-lines3.svg"></button>
+                        <button class="prioBtnMobile" id="low-btn" onclick="addPrio(2)"><span>Low</span><img class="prio-img" id="low-image"
+                                src="./src/img/img_add_task/green-arrows-down.png"></button>
+                    </div>
+                </div>
+                <!-- subtask input -->
+                <div class="input-container">
+                    <label for="subtask">Subtasks</label>
+                    <div class="input-field" id="subtask">
+                        <input onclick="openSubtaskEditor()" id="subtask-input" autofocus class="subtask__input" type="text"
+                            placeholder="Add new subtask" style="display: inline;">
+                        <img id="subtask-plus" class="subtask__plus" src="
+                                ./src/img/img_add_task/plus_dark.svg">
+                        <div class="subtask__actions">
+                            <img onclick="closeSubtaskEditor()" id="subtask-close" class="subtask__close" src="
+                                    ./src/img/img_add_task/close.svg">
+                            <img id="subtask-check" onload="submitOnEnter()" onclick="addSubtaskAddTask()"
+                                src=" ./src/img/img_add_task/check.svg" class="subtask__check">
+                        </div>
+                    </div>
+                    <ul class="subtasks-list">
+                    </ul>
+                </div>
+                <!-- Clear and Create Buttons -->
+                <div class="add-task-buttons">
+                    <button onclick="resetForm()" class="transparent-btn clear-btn"><span>clear
+                            x</span></button>
+                    <button type="submit" id="add-task-btn" class="dark-btn create-btn">
+                        <span>Create Task</span>
+                        <img src="./src/img/img_add_task/hook.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="TaskCreatedAlert" class="coloredBtn dNone"></div>

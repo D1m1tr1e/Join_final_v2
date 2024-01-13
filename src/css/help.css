@@ -1,0 +1,31 @@
+/* === GENERAL === */
+
+.help {
+    position: absolute;
+    left: 295px;
+    right: 28px;
+    top: 120px;
+}
+
+.help h1,
+.help h2 {
+    color: rgba(11, 173, 221);
+}
+
+.help ol>li {
+    margin-bottom: 20px;
+}
+
+/* === MEDIA-QUERIES === */
+
+@media (max-width: 750px) {
+
+    .help {
+        left: 0;
+        right: 0;
+        top: 100px;
+        bottom: 110px;
+        overflow: scroll;
+        padding: 0 28px;
+    }
+}

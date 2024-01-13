@@ -1,0 +1,270 @@
+body {
+    margin: 0;
+    font-family: 'Inter', 'sans-serif';
+    font-size: normal;
+    height: 90vh;
+}
+
+html {
+    height: 100%;
+}
+
+.join-logo-mobile {
+    display: none;
+}
+
+.join-Logo-Container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    align-items: center;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.join-Logo-Container img {
+    width: 150px;
+    height: 150px;
+    z-index: 1;
+    object-fit: contain;
+    animation: go_small 1.5s;
+}
+
+@keyframes go_small {
+    0% {
+        transform: translateX(1200px) translateY(450px) scale(3);
+    }
+
+    35% {
+        transform: translateX(500px) translateY() scale(3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.signIn-Container {
+    font-size: 30px;
+    animation: fade_in 1.5s;
+}
+
+.signIn-Container-mobile {
+        display: none;
+    }
+
+@keyframes fade_in {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    40% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.sign-Up-Button {
+    background: #2A3647;
+    border-radius: 10px;
+    margin-left: 40px;
+    color: white;
+    padding: 13px;
+    text-decoration: none;
+}
+
+.sign-Up-Button:hover {
+    background-color: #29ABE2;
+}
+
+.login-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    padding: 0;
+    margin: 0;
+}
+
+.login-head {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+}
+
+.login-head h1 {
+    font-size: 70px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.blue-line {
+    display: flex;
+    margin: 0;
+    width: 175px;
+    height: 3px;
+    background-color: rgba(11, 173, 221, 1);
+
+}
+
+.login-password-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 30px;
+    width: 500px;
+    padding: 30px 60px 30px 60px;
+    animation: fade_in 1.5s;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);
+}
+
+.login-password-input-area {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 400px;
+}
+
+.email-input {
+    background-image: url('/src/img/email.png');
+    background-repeat: no-repeat;
+    background-position: 360px;
+    background-size: 20px;
+    margin-bottom: 15px;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.email-input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.password-input {
+    background-image: url('/src/img/password.png');
+    background-repeat: no-repeat;
+    background-position: 360px;
+    background-size: 20px;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+
+.password-input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.checkbox {
+    padding-right: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#remember-me-checkbox {
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+.login-guest-button-container {
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.sign-in-button {
+    background-color: #2A3647;
+    padding: 9px;
+    color: white;
+    border-radius: 10px;
+    padding: 15px 30px 15px 30px;
+    font-size: 20px;
+    border: none;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.sign-in-button:hover {
+    background-color: #29ABE2;
+    border: none;
+}
+
+.guest-login-button {
+    padding: 9px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 20px 5px 20px;
+    font-size: 20px;
+    border: black 1px solid;
+    cursor: pointer;
+}
+
+.guest-login-button:hover {
+    color: #29ABE2;
+    border: 1px solid #29ABE2;
+}
+
+.forget-Password-Container a {
+    text-decoration: none;
+    color: #29ABE2;
+    font-weight: 400;
+}
+
+
+.forge-Password-Container a:visited {
+    color: #29ABE2;
+    text-decoration: none;
+}
+
+
+.message-container {
+    width: 100%;
+    transform: translateY(-50px);
+    display: flex;
+    justify-content: center;
+}
+
+
+.message {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #2A3647;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 29px;
+}
+
+.dNone {
+    display: none !important;
+}
+
+.registeredMsg {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    color: #2A3647;
+}

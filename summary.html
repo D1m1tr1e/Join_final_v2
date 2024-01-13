@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="120x120" href="./src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./src/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./src/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/css/header.css">
+    <link rel="stylesheet" href="./src/css/sidebar.css">
+    <link rel="stylesheet" href="./src/css/summary.css">
+    <link rel="stylesheet" href="./src/css/fonts.css">
+    <link rel="stylesheet" href="src/css/mobile-menu.css">
+    <!-- JS -->
+    <script src="./src/scripts/script.js"></script>
+    <script src="./src/scripts/storage.js"></script>
+    <script src="./src/scripts/summary.js"></script>
+    <script src="./src/scripts/dataBase.js"></script>
+    <script src="./src/scripts/registerlogin.js"></script>
+    <script src="./src/scripts/summaryTemplates.js"></script>
+</head>
+
+<body onload="includeHTML().then(getSummary)" id="summaryBody">
+    <div w3-include-html="src/templates/header.html"></div>
+    <div w3-include-html="src/templates/sidebar.html"></div>
+    <div class="summary-main">
+        <div class="left">
+            <div class="summary-container">
+                <div class="summary-header">
+                    <h1>Join 360</h1>
+                </div>
+                <div class="blue-line"></div>
+                <div class="text-header">
+                    <h2>Key Metrics at a Glance</h2>
+                </div>
+                <div class="blue-line-mobile"></div>
+            </div>
+            <div class="summary-Task-new" id="summaryContent" onclick="goToBoard()"></div>
+        </div>
+        <div class="right">
+            <div class="times-Container">
+                <div class="times">
+                    <span class="time-name">
+                        <h2 id="greetings"></h2>
+                        <p id="userGreeting"></p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

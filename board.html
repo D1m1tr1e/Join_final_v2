@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Board</title>
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="120x120" href="./src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./src/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./src/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/fonts.css">
+    <link rel="stylesheet" href="src/css/header.css">
+    <link rel="stylesheet" href="src/css/sidebar.css">
+    <link rel="stylesheet" href="src/css/board.css">
+    <link rel="stylesheet" href="src/css/mobile-menu.css">
+    <link rel="stylesheet" href="src/css/add-task-board.css">
+    <!-- Scripts -->
+    <script src="src/scripts/dataBase.js"></script>
+    <script async src="src/scripts/script.js"></script>
+    <script src="src/scripts/storage.js"></script>
+    <script src="src/scripts/board.js"></script>
+    <script src="src/scripts/board_utilities.js"></script>
+    <script src="src/scripts/board_html_templates.js"></script>
+    <script defer src="src/scripts/add-task_html_templates.js"></script>
+    <script defer src="src/scripts/add-task.js"></script>
+</head>
+
+<body onload="init()">
+    <div w3-include-html="src/templates/header.html"></div>
+    <div w3-include-html="src/templates/sidebar.html"></div>
+    <div id="taskInfoContainer" class="dNone" onclick="closeWindow('taskInfoContainer')"></div>
+    <div class="mainContainer">
+        <div id="addTaskMobil" onclick="openAddtaskSection()"></div>
+        <div id="boardHeader">
+            <div id="boardInnerContainer">
+                <h1 class="boardHeadline">Board</h1>
+                <div id="searchContainer">
+                    <div class="searchField">
+                        <input type="text" id="inputSearch" placeholder="Find Task">
+                        <div class="devider"></div>
+                        <img src="src/img/img_board/magnifyingGlass.png" alt="" class="searchFieldImage">
+                    </div>
+                    <div id="addTask" onclick="openAddtaskSection()">Add Task +</div>
+                </div>
+            </div>
+        </div>
+        <div id="boardMainContainer">
+            <div class="col">
+                <div class="boardControlElements">
+                    <h2>To do</h2>
+                    <img src="src/img/img_board/plus_button.svg" onclick="openAddtaskSection('toDo')" alt="plus symbol"
+                        class="addBtn">
+                </div>
+                <div id="toDo" class="taskContainer" ondrop="moveTo('toDo')" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="col">
+                <div class="boardControlElements">
+                    <h2>In progress</h2>
+                    <img src="src/img/img_board/plus_button.svg" onclick="openAddtaskSection('inProgress')" alt="plus symbol"
+                        class="addBtn">
+                </div>
+                <div id="inProgress" class="taskContainer" ondrop="moveTo('inProgress')" ondragover="allowDrop(event)">
+                </div>
+            </div>
+            <div class="col">
+                <div class="boardControlElements">
+                    <h2>Awaiting feedback</h2>
+                    <img src="src/img/img_board/plus_button.svg" onclick="openAddtaskSection('feedback')" alt="plus symbol"
+                        class="addBtn">
+                </div>
+                <div id="feedback" class="taskContainer" ondrop="moveTo('feedback')" ondragover="allowDrop(event)">
+                </div>
+            </div>
+            <div class="col">
+                <div class="boardControlElements">
+                    <h2>Done</h2>
+                </div>
+                <div id="done" class="taskContainer" ondrop="moveTo('done')" ondragover="allowDrop(event)"></div>
+            </div>
+        </div>
+        <div id="add-wrapper" onclick="closeWindow('modalAddtask')">
+            <div id="modalAddtask" class="addTaskOuterContainer dNone">
+                <div class="add-task-card" id="transition" onclick="doNotClose(event)">
+                    <div w3-include-html="src/templates/add_task_template.html"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'sans-serif';
+    font-size: normal;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #F6F7F8;
+}
+
+.summary-main {
+    height: 100svh;
+    width: auto;
+    max-width: 1920px;
+    position: absolute;
+    left: 232px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: #F6F7F8;
+    padding-left: 80px;
+    gap: 25px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.summary-Task-new {
+    display: flex;
+    flex-direction: column;
+    max-width: 560px;
+    gap: 25px;
+    margin: 0 20px;
+}
+
+.row {
+    display: flex;
+    gap: 25px;
+}
+
+.coll-big {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    background-color: white;
+    border-radius: 30px;
+    padding: 25px 19px;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+}
+
+.coll-span {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: white;
+    border-radius: 30px;
+    flex: 1;
+    padding: 25px 19px;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+}
+
+.left-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+
+.left-side img {
+    width: clamp(40px, 10vw, 50px);
+    height: clamp(40px, 10vw, 50px);
+}
+
+.line {
+    width: 2px;
+    background-color: #D1D1D1;
+    height: 90%;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.right-side span:first-of-type {
+    font-weight: bold;
+}
+
+.task-count-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-count-box span:first-of-type {
+    font-size: clamp(32px, 5vw, 50px);
+    font-weight: bold;
+}
+
+.task-count-box span:last-of-type {
+    text-align: center;
+}
+
+.coll-big img {
+    width: clamp(40px, 10vw, 50px);
+    height: clamp(40px, 10vw, 50px);
+}
+
+.coll-small {
+    flex: 1;
+    background: white;
+    border-radius: 30px;
+    padding: 25px 19px;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+}
+
+.coll-small:hover,
+.coll-big:hover,
+.coll-span:hover {
+    background-color: #2A3647;
+    color: white;
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.coll-big:hover img {
+    scale: 1.1;
+    filter: brightness(101%) contrast(200%) grayscale(52%) hue-rotate(-7deg) invert(100%) saturate(0%);
+}
+
+.coll-span:hover img {
+    scale: 1.1;
+}
+
+/* HEADER SUMMARY */
+
+.summary-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 560px;
+    margin: 0 20px;
+}
+
+.summary-container h1 {
+    font-size: clamp(2.3rem, 5vw, 3.2rem);
+}
+
+.summary-header {
+    font-size: 30px;
+}
+
+.blue-line {
+    height: 70px;
+    width: 3px;
+    margin: 0;
+    background-color: rgba(11, 173, 221, 1);
+}
+
+.blue-line-mobile {
+    display: none;
+    width: 70px;
+    height: 3px;
+    background-color: rgba(11, 173, 221, 1);
+}
+
+.text-header h2 {
+    font-weight: 400;
+    font-size: clamp(1.1rem, 5vw, 1.6rem);
+}
+
+.date {
+    font-size: clamp(12px, 5vw, 30px);
+    font-weight: bold;
+}
+
+.times-Container {
+    left: 1100px;
+    top: 350px;
+    display: flex;
+    gap: 0;
+}
+
+#greetings {
+    margin: 0;
+}
+
+.times p {
+    margin: 0;
+    color: rgba(11, 173, 221, 1);
+    font-size: 55px;
+}
+
+.time-name {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+}
+
+@media(max-width: 1200px) {
+    .right {
+        display: none;
+    }
+}
+
+@media(max-width: 900px) {
+    .summary-main {
+        padding-left: 20px;
+    }
+}
+
+@media(max-width: 750px) {
+
+    .summary-main {
+        left: 0;
+        bottom: 100px;
+        top: 0;
+        gap: 20px;
+        justify-content: center;
+        padding-left: 0;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .summary-container {
+        flex-direction: column;
+        gap: 8px;
+        align-items: baseline;
+    }
+
+    .blue-line {
+        display: none;
+    }
+
+    .blue-line-mobile {
+        display: block;
+    }
+
+    .text-header h2,
+    .summary-header h1 {
+        margin: 0;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .summary-Task-new,
+    .row {
+        gap: 12px;
+    }
+
+    .coll-span,
+    .coll-big,
+    .coll-small {
+        padding: 15px 0;
+    }
+}

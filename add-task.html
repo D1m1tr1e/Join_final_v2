@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="120x120" href="./src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./src/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./src/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/fonts.css">
+    <link rel="stylesheet" href="src/css/header.css">
+    <link rel="stylesheet" href="src/css/sidebar.css">
+    <link rel="stylesheet" href="src/css/board.css">
+    <link rel="stylesheet" href="src/css/add-task.css">
+    <link rel="stylesheet" href="src/css/mobile-menu.css">
+    <link rel="stylesheet" href="src/css/main.css">
+    <!-- Scripts -->
+    <script defer src="src/scripts/script.js"></script>
+    <script defer src="src/scripts/storage.js"></script>
+    <script defer src="src/scripts/dataBase.js"></script>
+    <script defer src="src/scripts/board.js"></script>
+    <script defer src="src/scripts/board_utilities.js"></script>
+    <script defer src="src/scripts/add-task_html_templates.js"></script>
+    <script defer src="src/scripts/add-task.js"></script>
+</head>
+
+<body onload="initAddTask()">
+    <div w3-include-html="src/templates/header.html"></div>
+    <div w3-include-html="src/templates/sidebar.html"></div>
+    <div w3-include-html="src/templates/add_task_template.html"></div>
+</body>
+
+</html>

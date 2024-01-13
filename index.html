@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="120x120" href="./src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./src/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./src/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/css/login.css">
+    <link rel="stylesheet" href="./src/css/fonts.css">
+    <link rel="stylesheet" href="./src/css/loginMobileCss.css">
+
+    <!-- JS -->
+    <script src="./src/scripts/script.js"></script>
+    <script src="./src/scripts/storage.js"></script>
+    <script src="./src/scripts/registerlogin.js"></script>
+    <script src="./src/scripts/summary.js"></script>
+    <script src="./src/scripts/dataBase.js"></script>
+</head>
+
+<body onload="logininit(true)">
+    <div class="join-Logo-Container login-animation-container">
+        <img id="join-logo" src="./src/img/logo_blue_join.png" alt="Join-Blue-Logo">
+        <img id="joinLogoMobile" class="join-logo-mobile" src="./src/img/logo_blue_join.png" alt="Join-Blue-Logo">
+        <div class="signIn-Container">Not a Join User? <a class="sign-Up-Button" href="register.html">Sign up</a></div>
+    </div>
+    <div class="login-Container">
+        <div class="login-password-content">
+            <div class="login-head">
+                <h1>Log in</h1>
+                <div class="blue-line"></div>
+            </div>
+            <form onsubmit="login(); return false;" autocomplete="on">
+                <div class="main-input-button-container">
+                    <div class="login-password-input-area">
+                        <input class="email-input" type="email" name="email" placeholder="E-Mail" id="email">
+                        <span class="dNone" id="login-user-error" style="color: red">User unknown. Please signup
+                            first</span>
+                        <input class="password-input" type="password" name="password" placeholder="Password"
+                            id="password">
+                    </div>
+                    <div class="registeredMsg dNone" id="regMsg">
+                        <div>You have successfully registered!</div>
+                    </div>
+                    <div class="checkbox-container">
+                        <div class="checkbox">
+                            <!-- <input class="checkbox-input" type="checkbox" name="" id="loginCheckbox"> -->
+                            <img src="src/img/unchecked.png" id="remember-me-checkbox" onclick="toggleRememberMe()">
+                            <span>Remember me</span>
+                        </div>
+                        <div class="forget-Password-Container"><a class="forgetpassword"
+                                href="forgetpassword.html">Forget my password</a></div>
+                    </div>
+                    <div class="login-guest-button-container">
+                        <button class="sign-in-button">Log in</button>
+                        <button onclick="guestLogin()" class="guest-login-button">Guest Log in</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="signIn-Container-mobile">Not a Join User? <a class="sign-Up-Button" href="register.html">Sign
+            up</a></div>
+</body>
+
+</html>

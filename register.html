@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="120x120" href="./src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./src/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./src/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./src/css/register.css">
+    <link rel="stylesheet" href="./src/css/fonts.css">
+    <!-- JS -->
+    <script src="./src/scripts/dataBase.js"></script>
+    <script src="./src/scripts/storage.js"></script>
+    <script src="./src/scripts/registerlogin.js"></script>
+    <script src="src/scripts/script.js"></script>
+</head>
+
+<body onload="logininit()">
+    <div class="register-container">
+        <div class="register-logo-container">
+            <img class="blue-logo" src="./src/img/logo_blue_join.png">
+        </div>
+        <div class="register-SignUp">
+            <a href="index.html"><img src="./src/img/left-arrow.png" alt=""></a>
+            <h1>Sign up</h1>
+            <div class="blue-line"></div>
+            <Form onsubmit="register(); return false;" id="register-form">
+                    <div class="input-register-password">
+                        <input class="name-input" type="text" name="name" placeholder="Name" id="name" required>
+                        <input class="email-input" type="email" name="email" placeholder="Email" id="email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                        <input class="password-input" type="password" name="password" placeholder="Password"
+                            id="password" autocomplete="on" required>
+                        <div class="password-error-box">
+                            <input class="password-input" type="password" name="password" placeholder="Confirm Password"
+                                id="confirm-password" autocomplete="on" onkeyup="checkPassword()" required>
+                                <span class="dNone" id="password-error">Passwords do not match</span>
+                        </div>
+                        <div class="checkbox">
+                            <img src="src/img/unchecked.png" id="privacy-checkbox" onclick="togglePrivacyCheckbox()">
+                            <span>I accept the <div onclick="goToLegalInfoPage('privacy')">Privacy Policy</div></span>
+                        </div>
+                    </div>
+                    <div class="SignUp-button-container">
+                        <button id="registerBtn" type="submit" class="SignUp-button">Sign up</button>
+                    </div>
+            </Form>
+        </div>
+        <div class="legal-info-links">
+            <div onclick="goToLegalInfoPage('privacy')">Privacy Policy</div>
+            <div onclick="goToLegalInfoPage('impressum')">Legal notice</div>
+        </div>
+        <div id="register-alert" class="coloredBtn dNone"></div>
+    </div>
+</body>
+
+</html>

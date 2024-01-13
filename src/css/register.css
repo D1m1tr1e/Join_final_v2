@@ -1,0 +1,379 @@
+body {
+    margin: 0;
+    font-family: 'Inter', 'sans-serif';
+    overflow-y: hidden;
+}
+
+.register-logo-container {
+    width: 110px;
+    align-self: baseline;
+}
+
+.blue-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-top: 80px;
+    margin-left: 80px;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.legal-info-links {
+    display: flex;
+    gap: 25px;
+}
+
+.legal-info-links div {
+    cursor: pointer;
+}
+
+.legal-info-links div:hover {
+    color: #29ABE2;
+}
+
+#privacy-checkbox {
+    cursor: pointer;
+}
+
+.register-SignUp {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 20px;
+    width: 500px;
+    padding: 30px 60px 30px 60px;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.04);
+    animation: fade_in 1.5s;
+}
+
+@keyframes fade_in {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    40% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#register-form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.register-SignUp a {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    display: flex;
+    cursor: pointer
+}
+
+.register-SignUp h1 {
+    font-size: 70px;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.blue-line {
+    display: flex;
+    margin: 0;
+    width: 175px;
+    height: 3px;
+    background-color: rgba(11, 173, 221, 1);
+}
+
+.sign-Up-Button {
+    background: #2A3647;
+    border-radius: 10px;
+    margin-left: 40px;
+    color: white;
+    padding: 13px;
+    text-decoration: none;
+}
+
+.input-register-password {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    max-width: 400px;
+    width: 100%;
+    gap: 25px;
+}
+
+.password-error-box {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: red;
+}
+
+.dNone {
+    display: none !important;
+}
+
+.password-input {
+    background-image: url('/src/img/password.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 95%;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 8px;
+}
+
+.input-login-password input {
+    margin-bottom: 20px;
+}
+
+.name-input {
+    background-image: url('/src/img/Name.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 95%;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 8px;
+}
+
+.email-input {
+    background-image: url('/src/img/email.png');
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 95%;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 8px;
+}
+
+.name-input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.email-input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.password-input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.checkbox span {
+    display: flex;
+    gap: 5px;
+}
+
+.checkbox span div {
+    color: #29ABE2;
+    cursor: pointer;
+}
+
+.checkbox span div:hover {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.SignUp-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.SignUp-button {
+    background-color: #2A3647;
+    padding: 9px;
+    color: white;
+    border-radius: 10px;
+    padding: 15px 30px 15px 30px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#register-alert {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100px;
+    z-index: 20;
+    animation: move-up 3000ms ease-in-out forwards;
+    font-size: 1rem;
+    font-weight: 400;
+    max-width: 326px;
+    text-align: center;
+}
+
+
+@keyframes move-up {
+
+    0% {
+        bottom: -100%;
+    }
+
+    30% {
+        bottom: 100px;
+    }
+
+    50% {
+        bottom: 100px;
+    }
+
+    70% {
+        bottom: 100px;
+    }
+
+    100% {
+        bottom: -100%;
+    }
+}
+
+.coloredBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 15px;
+    gap: 10px;
+    background: #2A3647;
+    border: none;
+    border-radius: 10px;
+    line-height: 120%;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+@media(max-width:1073px) {
+    .blue-logo {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+
+    .register-SignUp {
+        width: 380px;
+        padding: 0px 60px 0px 60px;
+    }
+}
+
+
+@media(max-width:520px) {
+    .register-SignUp {
+        padding: 0;
+    }
+
+    .register-SignUp h1 {
+        font-size: 50px;
+    }
+}
+
+
+@media(max-width:393px) {
+    .register-SignUp {
+        width: 380px;
+        padding: 0;
+    }
+
+    .sign-Up-Container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+@media(max-width:415px) {
+
+    .blue-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .register-SignUp {
+        padding: 0;
+        width: 95%;
+    }
+
+    .register-SignUp h1 {
+        font-size: 50px;
+    }
+
+    .register-container {
+        gap: 25px;
+    }
+}
+
+@media(max-width:393px) {
+
+    .sign-Up-Container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media(max-width:360px) {
+
+    .register-SignUp h1 {
+        font-size: 30px;
+        margin-top: 15px;
+    }
+
+    .register-SignUp a {
+        position: absolute;
+        top: 18px;
+        left: 20px;
+        display: flex;
+        cursor: pointer;
+    }
+
+    .register-SignUp img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .blue-line {
+        width: 70px;
+    }
+
+    .sign-Up-Container {
+        width: 100%;
+    }
+}

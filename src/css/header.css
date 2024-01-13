@@ -1,0 +1,161 @@
+body {
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0px;
+    width: 100%;
+    height: 89px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    font-size: 21px;
+    z-index: 21;
+}
+
+.headline {
+    padding-left: 350px;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+    padding-right: 20px;
+}
+
+.guestUserLogo {
+    background-image: url(../img/Guestlogin.svg);
+    background-size: 50px 50px;
+}
+
+.logout-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 30px;
+    top: 90px;
+    background-color: #2A3647;
+    color: white;
+    font-size: 15px;
+    border-radius: 20px 0px 20px 20px;
+    padding: 10px;
+}
+
+.logout-container div {
+    padding: 8px 16px 8px 16px;
+    cursor: pointer;
+    color: #CDCDCD;
+}
+
+.logout-container div:hover {
+    background-color: #2A3D59;
+}
+
+.loggedinUserLogo {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: white;
+    font-weight: bold;
+    background-color: #2B3647;
+}
+
+.profile-section > a {
+    display: flex;
+}
+
+.helpIcon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.loggedinUserLogo:hover,
+.guestUserLogo:hover {
+    transform: scale(1.1);
+}
+
+.helpIcon:hover {
+    filter: invert(78%) sepia(0%) saturate(1480%) hue-rotate(176deg) brightness(114%) contrast(79%);
+    transform: scale(1.1);
+}
+
+.guestLogin {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.logout {
+    position: absolute;
+    top: 60px;
+    right: 50px;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.dNone {
+    display: none;
+}
+
+.headline-logo {
+    height: 39px;
+    padding-left: 25px;
+    display: none;
+}
+
+.logout-mobile-container {
+    display: none;
+}
+
+@media(max-width: 750px) {
+    .headline {
+        top: 105px;
+        padding-left: 0;
+        font-size: 16px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .question-mark {
+        display: none;
+    }
+
+    .logout {
+        display: none;
+    }
+
+    .logout-mobile {
+        cursor: pointer;
+    }
+
+    .legal-notice-mobile {
+        padding-bottom: 10px !important;
+        padding-top: 15px !important;
+        padding: 30px;
+        cursor: pointer;
+    }
+
+    .logout-mobile {
+        padding-left: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+@media(max-width: 750px) {
+
+    .headline>p {
+        display: none;
+    }
+}

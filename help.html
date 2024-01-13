@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="120x120" href="./src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./src/favicon/site.webmanifest">
+    <link rel="mask-icon" href="./src/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/fonts.css">
+    <link rel="stylesheet" href="src/css/header.css">
+    <link rel="stylesheet" href="src/css/sidebar.css">
+    <link rel="stylesheet" href="src/css/help.css">
+    <link rel="stylesheet" href="src/css/mobile-menu.css">
+    <!-- Scripts -->
+    <script src="src/scripts/script.js"></script>
+</head>
+
+<body onload="includeHTML().then(generateLoggedinUserLogo)">
+    <div w3-include-html="src/templates/header.html"></div>
+    <div w3-include-html="src/templates/sidebar.html"></div>
+    <div class="help">
+        <h1>What is Join?</h1>
+        <p>
+            Join is your project management tool of choice. It is a typical Kanban board for you and your team. 
+            Kanban boards visually depict work at various stages of a process using cards to represent work items 
+            and columns to represent each stage of the process. Cards are moved from left to right to show 
+            progress and to help coordinate teams performing the work.
+        </p>
+        <h2>How to use it?</h2>
+        <ol>
+            <li>
+                <strong>Define Workflow:</strong><br>
+                Start by defining the workflow for your projects or tasks, breaking them down into individual steps or stages. Assign each step to a specific column on the kanban board.y.
+            </li>
+            <li>
+                <strong>Add Cards:</strong><br>
+                Add work items to the board as cards, assigning each card to the appropriate column based on its current status in the workflow.
+            </li>
+            <li>
+                <strong>Move Cards:</strong><br> 
+                Move the cards from column to column as the work progresses, updating the board in real-time to reflect the current status of each work item. Use the board to track progress, 
+                identify bottlenecks, and make informed decisions about what work to tackle next.
+            </li>
+        </ol>
+    </div>
+
+</body>
+
+</html>
