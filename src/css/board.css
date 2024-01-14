@@ -1006,10 +1006,10 @@ body {
     }
 
     .taskContainer {
-        display: flex;
+        /*display: flex;
         justify-content: center;
         overflow-x: auto;
-        overflow-y: hidden;
+        overflow-y: hidden;*/
         gap: 30px;
     }
 
