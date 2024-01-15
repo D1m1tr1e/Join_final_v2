@@ -276,7 +276,6 @@ function createHtmlForSubtaskTaskInfo(task, checkbox, column, i, s) {
     `;
 }
 
-
 /**
  * Creates the HTML code for rendering the move to mobile options.
  * 
