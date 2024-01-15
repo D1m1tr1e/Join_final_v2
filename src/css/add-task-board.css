@@ -473,6 +473,8 @@ input[type='date']::-webkit-calendar-picker-indicator {
 	padding: 0;
 	margin-top: 15px;
 	display: none;
+	max-height: 130px;
+    overflow: auto;
 }
 
 .subtaskText {
@@ -568,6 +570,10 @@ input[type='date']::-webkit-calendar-picker-indicator {
 	display: flex;
 	gap: 12px;
 	margin-left: 4px;
+	max-width: 310px;
+    overflow-y: auto;
+    padding: 0.3rem;
+
 }
 
 ::placeholder {

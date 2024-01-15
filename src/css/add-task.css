@@ -502,6 +502,8 @@ input[type='date']::-webkit-calendar-picker-indicator {
 	padding: 0;
 	margin-top: 15px;
 	display: none;
+	max-height: 130px;
+    overflow: auto;
 }
 
 .subtaskText {

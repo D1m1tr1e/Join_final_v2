@@ -248,7 +248,7 @@ function createHtmlForAssignedList(assign, i, checkbox) {
 function createHtmlForSubtask(task, checked, column, i, s) {
     let title = task.title;
     let id = task.id;
-    return `
+    return /*html*/ `
         <div onclick="changeSubtaskStatus('${column}', ${i}, ${id}, ${s})">
             <div>
                 <img id="${id}" src="${checked}">
