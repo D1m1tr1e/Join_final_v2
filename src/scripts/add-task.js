@@ -14,7 +14,7 @@ let assignedPeopleForTask = [];
  * Calls the "loadUsers" function.
  */
 async function initAddTask() {
-	if(getloggedInStatus() === 'false') window.location.href = 'index.html';
+	if (getloggedInStatus() === 'false') window.location.href = 'index.html';
 	await includeHTML();
 	loadUsers();
 	generateLoggedinUserLogo();
@@ -73,7 +73,6 @@ async function createTask() {
 	}
 }
 
-
 function isDesktop() {
 	return window.innerWidth > 750;
 }
@@ -105,7 +104,6 @@ function setsRequiredAttributeForDateInput() {
 /**
  * Retrieves the date from input fields and formats it as a string.
  * Assumes the existence of elements with IDs 'year', 'months', and 'day'.
- * 
  * @returns {string} The formatted date string in 'YYYY-MM-DD' format.
  */
 function getDate() {
@@ -183,10 +181,9 @@ function selectPriority(priorityValue) {
 	prio = priorityValue + 1;
 }
 
-// /**
-//  * Resets the priority buttons to their default state.
-//  */
-
+/**
+ * Resets the priority buttons to their default state.
+ */
 function resetPrio() {
 	for (let i = 0; i < prios.length; i++) {
 		const priority = prios[i];
@@ -198,7 +195,6 @@ function resetPrio() {
 /**
  * Resets the form to its default state.
  */
-
 function resetForm() {
 	document.getElementById('title').value = '';
 	document.getElementById('description').value = '';
@@ -218,7 +214,6 @@ function resetForm() {
 /**
  * Removes the selected contact checkboxes.
  */
-
 function removeContactCheckboxes() {
 	const contactCheckboxes = document.querySelectorAll('.contact__checkbox');
 	for (let i = 0; i < contactCheckboxes.length; i++) {
@@ -245,7 +240,6 @@ async function loadContacts() {
 /**
  * Toggles the checkbox state and updates the list of assigned people for a task.
  * Also updates the visual representation of assigned people.
- * 
  * @param {number} i - The index of the checkbox in the list.
  * @param {Object} person - The person object associated with the checkbox.
  */
@@ -262,7 +256,6 @@ function checkbox(i, person) {
 
 /**
  * Adds or removes a person to/from the list of assigned people for a task.
- * 
  * @param {Object} person - The person to be added or removed.
  */
 function collectAssignedPeople(person) {
@@ -284,23 +277,20 @@ function renderAssignedPeopleInitinals() {
 	assignContainer.innerHTML = '';
 	for (let i = 0; i < assignedPeopleForTask.length; i++) {
 		assignContainer.innerHTML += createHtmlForAssignedPeopleTask(assignedPeopleForTask[i]);
-   }
+	}
 }
 
 /**
  * Handles the click event to display the list of assigned contacts.
  */
-
 function assignToHandler() {
 	document.querySelector('.assigned-to__list').style.display = 'flex';
 	document.querySelector('.assigned-to').style.display = 'none';
 }
 
-
 /**
  * Handles the click event when selecting a contact from the assigned contacts list.
  */
-
 function assignToHandlerInList() {
 	document.querySelector('.assigned-to__list').style.display = 'none';
 	document.querySelector('.assigned-to').style.display = 'flex';
@@ -310,7 +300,6 @@ function assignToHandlerInList() {
  * Adds a new subtask to the task.
  * Validates the input value and adds the subtask to the subTasks array.
  */
-
 function addSubtaskAddTask() {
 	const subTaskId = generateRandomId();
 	const value = document.querySelector('.subtask__input').value;
@@ -334,7 +323,6 @@ function addSubtaskAddTask() {
  * Opens the subtask editor to add a new subtask.
  * Resets the input value and displays the necessary elements.
  */
-
 function openSubtaskEditor() {
 	document.querySelector('.subtask__input').value = '';
 	document.querySelector('.subtask__actions').style.display = 'flex';
@@ -345,7 +333,6 @@ function openSubtaskEditor() {
  * Closes the subtask editor without adding a new subtask.
  * Hides the input field and actions, and shows the plus icon.
  */
-
 function closeSubtaskEditor() {
 	document.querySelector('.subtask__actions').style.display = 'none';
 	document.querySelector('.subtask__plus').style.display = 'block';
@@ -357,7 +344,6 @@ function closeSubtaskEditor() {
  * Creates HTML markup for each subtask and updates the subtasks-list element.
  * @param {object[]} subTasks - An array of subtask objects.
  */
-
 function composeSubTasks(subTasks) {
 	document.querySelector('.subtasks-list').style.display = 'block';
 	document.querySelector('.subtasks-list').innerHTML = '';
@@ -374,7 +360,6 @@ function composeSubTasks(subTasks) {
  * Removes a subtask from the subTasks array and updates the displayed subtasks.
  * @param {string} id - The ID of the subtask to be removed.
  */
-
 function removeSubtask(id) {
 	const filteredSubtasks = subTasks.filter((sub) => sub.id !== id.toString());
 	subTasks = filteredSubtasks;
@@ -385,7 +370,6 @@ function removeSubtask(id) {
  * Generates a random ID for a subtask.
  * @returns {string} A random ID as a string.
  */
-
 function generateRandomId() {
 	const random = Math.floor(Math.random() * 1000000);
 	return random.toString();
@@ -394,7 +378,6 @@ function generateRandomId() {
 /**
  * Adds an event listener to submit the subtask on pressing the Enter key.
  */
-
 function submitOnEnter() {
 	let input = document.getElementById('subtask-input');
 	input.addEventListener("keypress", function (event) {
@@ -409,7 +392,6 @@ function submitOnEnter() {
  * Displays an alert message on the webpage.
  * @param {string} message - The message to be displayed in the alert.
  */
-
 function alertMessage(message) {
 	let taskCreatedAlert = document.getElementById('TaskCreatedAlert');
 	taskCreatedAlert.innerHTML = message;
@@ -421,7 +403,6 @@ function alertMessage(message) {
  * Resets the styling of the select task category element.
  * Removes the custom border and border-radius styles.
  */
-
 function resetSelectCategory() {
 	document.querySelector('.select-task-category').style.borderBottom = '1px solid #a8a8a8';
 	document.querySelector('.select-task-category').style.borderRadius = '10px';
@@ -430,7 +411,6 @@ function resetSelectCategory() {
 /**
  * Sets the minimum value for all elements with the name "due-date" to today's date.
  */
-
 function limitDueDate() {
 	let today = new Date().toISOString().split('T')[0];
 	for (let i = 0; i < document.getElementsByName("due-date").length; i++) {

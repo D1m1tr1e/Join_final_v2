@@ -131,12 +131,6 @@ function checkIfIncluded(t, search) {
 }
 
 
-
-
-
-
-//****************** */ DRAG & DROP FUNTIONS
-
 /**
  * Allows the dropping of elements during drag and drop.
  * 
